@@ -76,7 +76,8 @@ compile() {
   cd $root_dir
   PATH=$root_dir/.platform_tools/erlang/bin:$PATH
   PATH=$root_dir/.platform_tools/elixir/bin:$PATH
-
+  
+  cd $build_dir
   run_compile
 
   cd - > /dev/null
