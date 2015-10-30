@@ -1,16 +1,12 @@
 #!/usr/bin/env bash
 
 build_pack_dir=$(cd $(dirname $(dirname $0)); pwd)
-echo "Dirs are: $1; $2; $3"
-ls -la $1
-ls -la $2
-ls -la $3
+# echo "Dirs are: $1; $2; $3"
+# ls -la $1
+# ls -la $2
+# ls -la $3
 # Ensure dirs are present
 mkdir -p $1 $2 $3
-
-head $1
-head $2
-head $3
 
 root_dir=$(cd $1 && pwd)
 build_dir=$(cd $1/apps/ep_web && pwd)
