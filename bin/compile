@@ -5,8 +5,8 @@ build_pack_dir=$(cd $(dirname $(dirname $0)); pwd)
 # Ensure dirs are present
 mkdir -p $1 $2 $3
 
-build_dir=$(cd $1 && pwd)
-cache_dir=$(cd $2 && pwd)
+build_dir=$(cd $1/apps/ep_bot && pwd)
+cache_dir=$(cd $2/apps/ep_bot && pwd)
 env_dir=$(cd $3 && pwd)
 heroku_dir=$build_dir/.heroku
 mkdir -p $heroku_dir/node
@@ -34,4 +34,5 @@ install_and_cache_deps
 compile
 
 head "Finalizing build"
-write_profile
+# write_profile
+head "Successfully built Phoenix App"
