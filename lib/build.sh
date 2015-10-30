@@ -73,9 +73,9 @@ install_bower_deps() {
 }
 
 compile() {
-  cd $build_dir
-  PATH=$build_dir/.platform_tools/erlang/bin:$PATH
-  PATH=$build_dir/.platform_tools/elixir/bin:$PATH
+  cd $root_dir
+  PATH=$root_dir/.platform_tools/erlang/bin:$PATH
+  PATH=$root_dir/.platform_tools/elixir/bin:$PATH
 
   run_compile
 
@@ -103,7 +103,6 @@ cache_versions() {
 write_profile() {
   info "Creating runtime environment"
   mkdir -p $build_dir/.profile.d
-  local export_line="export PATH=\"\$HOME/.heroku/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\$PATH\"
-                     export MIX_ENV=${MIX_ENV}"
-  echo $export_line >> $build_dir/.profile.d/phoenix_static_buildpack_paths.sh
+  local export_line="export PATH=\"\$HOME/.heroku/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\$PATH\""
+  echo $export_line >> $root_dir/.profile.d/phoenix_static_buildpack_paths.sh
 }
