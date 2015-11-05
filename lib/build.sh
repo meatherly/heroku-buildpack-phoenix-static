@@ -1,5 +1,5 @@
 download_node() {
-  local node_url="http://s3pository.heroku.com/node/v$node_version/node-v$node_version-linux-x64.tar.gz"
+  local node_url="https://nodejs.org/dist/v$node_version/node-v$node_version-linux-x64.tar.gz"
 
   if [ ! -f ${cached_node} ]; then
     info "Downloading node ${node_version}..."
@@ -76,7 +76,7 @@ compile() {
   cd $root_dir
   PATH=$root_dir/.platform_tools/erlang/bin:$PATH
   PATH=$root_dir/.platform_tools/elixir/bin:$PATH
-  
+
   cd $build_dir
   run_compile
 
