@@ -27,7 +27,8 @@ export_config_vars
 export_mix_env
 
 cached_node=$cache_dir/node-v$node_version-linux-x64.tar.gz
-
+head "cached_node is: "
+info cached_node
 head "Installing binaries"
 download_node
 install_node
